@@ -18,6 +18,18 @@ It fetches live stock-related sentiment data, processes it, and dynamically **vi
 ## 📂 Project Structure
 SentimentStream/ │── 📂 consumers/ # Kafka Consumer Folder │ ├── consumer_monsuru.py # Reads, processes, and visualizes sentiment data │── 📂 producers/ # Kafka Producer Folder │ ├── producer_monsuru.py # Fetches and streams stock sentiment data │── 📂 utils/ # Utility Functions │ ├── db_utils.py # (Optional) Handles database operations │── 📂 images/ # Stores project images │ ├── sentiment_chart.png # Screenshot of visualization │── 📂 data/ # Stores raw or processed data (optional) │── .gitignore # Specifies files to ignore in Git tracking │── .env # Stores Kafka and DB settings (DO NOT commit) │── .env.example # Example environment variables │── requirements.txt # List of dependencies │── README.md # Project documentation │── sentiment_stream.sqlite # SQLite database file
 
+## 🔍 About the Consumer
+
+The **custom consumer (`consumer_monsuru.py`)** reads stock sentiment data from the **Kafka topic (`sentiment_stream`)**, processes it, and visualizes the insights dynamically.  
+
+### ✅ Features:
+- **Stores Sentiment Data in SQLite** → Keeps a record of sentiment trends.
+- **Sentiment Trend Chart** → Uses a **Moving Average** to track stock sentiment over time.
+- **Sentiment Distribution Bar Chart** → Shows real-time sentiment scores for stocks (**Green = Positive, Red = Negative**).
+- **Live Updates** → Automatically updates as new messages arrive from Kafka.
+
+This allows for **real-time stock sentiment monitoring and analysis**. 🚀
+
 
 ---
 
